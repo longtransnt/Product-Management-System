@@ -25,7 +25,7 @@ const AddProduct = () => {
         return formValid;
     }
 
-    const handleSubmit = async () => {
+    const handleAdd = async () => {
         try {
             const res = await ProductService.create(JSON.stringify({
                 name: formInput["name"],
@@ -34,7 +34,7 @@ const AddProduct = () => {
             console.log(error)
         }
     }
-    const handleChange = (event) => {
+    const handleUpdate = (event) => {
         setFormInput({
             ...formInput,
             [event.target.name]: event.target.value
@@ -47,12 +47,12 @@ const AddProduct = () => {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleAdd}>
             <h1>Add new Item</h1>
             <br/>
             <input
                 value={formInput.name}
-                onChange={handleChange}
+                onChange={handleUpdate}
                 placeholder="Name"
                 type="text"
                 name="name"

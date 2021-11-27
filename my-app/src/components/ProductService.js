@@ -21,7 +21,7 @@ const search = infix => {
 };
 
 const remove = id => {
-    return http.delete(`/products${id}`);
+    return http.delete(`/products/${id}`);
 };
 
 const removeAll = () => {

@@ -3,7 +3,7 @@ import ProductService from './ProductService';
 
 const DeleteProduct = () => {
 
-    const [id, setID] = useState(null)
+    const [id, setID] = useState("")
 
     const handleSubmit = async (event) => {
         try {

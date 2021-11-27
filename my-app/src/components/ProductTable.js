@@ -6,7 +6,6 @@ import BootstrapTable from 'react-bootstrap-table-next'
 import ProductService from './ProductService';
 import ToolkitProvider, { Search } from 'react-bootstrap-table2-toolkit';
 import 'react-bootstrap-table2-paginator/dist/react-bootstrap-table2-paginator.min.css'
-import { Button } from 'bootstrap';
 
 const category = ['Food', 'Grocery', 'Household', 'Electronics', 'Mobile Phones', 'Male Ups',
                  'Female Fashion', 'Male Fashion', 'Backpack and Suitcase', 'Accessories', 'Book', 'Computers'];
@@ -18,7 +17,6 @@ const ProductTable = () => {
         {dataField: 'id', text: "ID", sort: true, searchable: false},
         {dataField: 'name', text: "Name", sort: true },
         {dataField: 'catID', text: "Category", searchable: false, formatter: (cell, row) => category[cell]},
-        { id: 'click-me-button', render: ({ row }) => (<button onClick={(e) => this.handleButtonClick(e, row)}>Click Me</button>)}
     ]
 
     const pagination = paginationFactory({
