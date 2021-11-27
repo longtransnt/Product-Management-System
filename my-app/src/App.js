@@ -8,11 +8,11 @@ function App() {
   return (
     <div className="App">
       <Sites>
+      <div label="Product Table">
+            <ProductTable/>
+        </div>
         <div label="Add Product">
             <AddProduct/>
-        </div>
-        <div label="Product Table">
-            <ProductTable/>
         </div>
       </Sites>
     </div>
