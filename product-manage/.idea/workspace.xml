@@ -172,17 +172,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="RmitsbApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="rmitsb" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="rmit.rmitsb.RmitsbApplication" />
@@ -208,6 +197,8 @@
       <option name="presentableId" value="Default" />
       <updated>1636502386459</updated>
       <workItem from="1637969275168" duration="8776000" />
+      <workItem from="1637979439871" duration="1909000" />
+      <workItem from="1637983404059" duration="5433000" />
     </task>
     <servers />
   </component>
