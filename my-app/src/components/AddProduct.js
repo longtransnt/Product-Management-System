@@ -10,7 +10,7 @@ const AddProduct = () => {
     const [catID, setCatID] = useState("1");
     const [errors,setErrors] = useState("")
     const options = [{ value: 1, label: 'Food' }, { value: 2, label: 'Grocery' },{ value: 3, label: 'Household' },
-    { value: 4, label: 'Electronics' }, { value: 5, label: 'Mobile Phones' }, { value: 6, label: 'Make Ups' }, { value: 7, label: 'Female Fashion' }, { value: 8, label: 'Male Fashion' }, { value: 9, label: 'Backpack and Suitcase' }, { value: 10, label: 'Accessories' }, { value: 11, label: 'Book' }, { value: 12, label: 'Laptop' }]
+    { value: 4, label: 'Electronics' }, { value: 5, label: 'Mobile Phones' }, { value: 6, label: 'Make Ups' }, { value: 7, label: 'Female Fashion' }, { value: 8, label: 'Male Fashion' }, { value: 9, label: 'Backpack and Suitcase' }, { value: 10, label: 'Accessories' }, { value: 11, label: 'Book' }, { value: 12, label: 'Computers' }]
 
     const handleValidation = () => {
         let errors = {};
@@ -28,9 +28,8 @@ const AddProduct = () => {
     const handleSubmit = async () => {
         try {
             const res = await ProductService.create(JSON.stringify({
-                    name: formInput["name"],
-                    catID: catID}));
-            alert("Item Added")
+                name: formInput["name"],
+                catID: catID.value}));
         } catch (error) {
             console.log(error)
         }

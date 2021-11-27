@@ -2,6 +2,7 @@ import './App.css';
 import "bootstrap/dist/css/bootstrap.min.css";
 import Sites from "./components/Sites";
 import AddProduct from "./components/AddProduct";
+import ProductTable from './components/ProductTable';
 
 function App() {
   return (
@@ -10,7 +11,8 @@ function App() {
         <div label="Add Product">
             <AddProduct/>
         </div>
-        <div label="Search Product">
+        <div label="Product Table">
+            <ProductTable/>
         </div>
       </Sites>
     </div>
