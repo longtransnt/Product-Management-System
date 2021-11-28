@@ -2,14 +2,12 @@ import './App.css';
 import "bootstrap/dist/css/bootstrap.min.css";
 import AddProduct from "./components/AddProduct";
 import ProductTable from './components/ProductTable';
-import DeleteProduct from './components/DeleteProduct';
 import UpdateProduct from './components/UpdateProduct';
 import Navbar from 'react-bootstrap/Navbar';
 import Container from 'react-bootstrap/Container';
 import logo from'./logo.svg';
 import { Nav } from 'react-bootstrap';
 import { useState } from 'react';
-import { NavLink } from 'react-bootstrap';
 
 function App() {
   const [page, setPage] = useState('Product Table')
@@ -30,7 +28,7 @@ function App() {
         <Nav className="me-auto">
           <Nav.Link onClick={()=>setPage('Product Table')}>Product Table</Nav.Link>
           <Nav.Link onClick={()=>setPage('Add Product')}>Add Product</Nav.Link>
-          <Nav.Link onClick={()=>setPage('Update Product')}>Update Product</Nav.Link>
+          <Nav.Link onClick={()=>setPage('Update Product')}>Edit/Delete Product</Nav.Link>
         </Nav>
       </Container>
     </Navbar>

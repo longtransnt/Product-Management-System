@@ -52,3 +52,7 @@ body, html {
 #delete-form {
   display: none;
 }
+
+.btn {
+  min-width: 15em;
+}

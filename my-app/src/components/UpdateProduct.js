@@ -44,45 +44,52 @@ const UpdateStudent = () => {
     }
 
     return (
-        <div class="container d-flex justify-content-center align-items-left" id="container">
-            <div class="bg-white rounded shadow-5-strong p-5">
-                <form onSubmit={handleUpdate}>
-                    <h2>Update Product</h2>
+        <div className="container d-flex justify-content-center align-items-left" id="container">
+            <div className="bg-white rounded shadow-5-strong p-5">
+                    <div>
+                    <form onSubmit={handleUpdate}>
+                        <h2>Update Product</h2>
+                        <br/>
+                        <input
+                            value={formInput.id}
+                            onChange={handleQuery}
+                            placeholder="ID"
+                            type="text"
+                            name="id"
+                            required
+                        />
+                        <br/>
+                        <br/>
+                        <input
+                            value={formInput.name}
+                            onChange={handleQuery}
+                            placeholder="Name"
+                            type="text"
+                            name="name"
+                        />
+                        <br/>
+                        <br/>
+                        <Select
+                            value={catID}
+                            onChange={setCatID}
+                            options={myConst.CATEGORIES}
+                        />
                     <br/>
-                    <input
-                        value={formInput.id}
-                        onChange={handleQuery}
-                        placeholder="ID"
-                        type="text"
-                        name="id"
-                        required
-                    />
-                    <br/>
-                    <br/>
-                    <input
-                        value={formInput.name}
-                        onChange={handleQuery}
-                        placeholder="Name"
-                        type="text"
-                        name="name"
-                    />
-                    <br/>
-                    <br/>
-                    <Select
-                        value={catID}
-                        onChange={setCatID}
-                        options={myConst.CATEGORIES}
-                    />
-                    <br/>
-                    <input type="submit" value="Update"/>
-                </form>
+                            <Button class="btn"
+                                type="submit" value="Update"
+                            >
+                                Update
+                            </Button>
+                    </form>
+                </div>
                 <br/>
-                <Button 
+                <Button class="btn"
                     onClick={() => document.getElementById("delete-form").style.display="block"}
                 >
                     Delete Item
                 </Button>
                 <div id="delete-form">
+                    <br/>
                     <form onSubmit={handleSubmit}>
                         <h2>Remove Product</h2>
                         <input
@@ -93,7 +100,13 @@ const UpdateStudent = () => {
                             name="id"
                             required
                         />
-                        <input type="submit" value="Delete"/>
+                        <br/>
+                        <br/>
+                        <Button class="btn"
+                            type="submit" value="Delete"
+                        >
+                            Delete
+                        </Button>
                     </form>
                 </div>
             </div>

@@ -2,6 +2,8 @@ import React, {useState} from 'react';
 import Select from 'react-select';
 import ProductService from './ProductService';
 import * as myConst from './Constants'
+import Button from 'react-bootstrap/Button';
+
 
 const AddProduct = () => {
     const [formInput, setFormInput] = useState({
@@ -66,7 +68,11 @@ const AddProduct = () => {
                         options={myConst.CATEGORIES}
                     />
                     <br/>
-                    <input type="submit" value="Add"/>
+                    <Button class="btn"
+                            type="submit" value="Add"
+                        >
+                            Add Product
+                        </Button>
                 </form>
             </div>
         </div>
