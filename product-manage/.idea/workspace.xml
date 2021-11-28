@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="05d7d98e-4dce-4ddf-9fd8-e6397a2a1bce" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../my-app/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../my-app/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../my-app/src/components/ProductTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/../my-app/src/components/ProductTable.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my-app/src/components/AddProduct.js" beforeDir="false" afterPath="$PROJECT_DIR$/../my-app/src/components/AddProduct.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my-app/src/components/ProductService.js" beforeDir="false" afterPath="$PROJECT_DIR$/../my-app/src/components/ProductService.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -205,7 +205,8 @@
       <workItem from="1637994975071" duration="1610000" />
       <workItem from="1637997445362" duration="1217000" />
       <workItem from="1638010061156" duration="1879000" />
-      <workItem from="1638028475083" duration="1712000" />
+      <workItem from="1638028475083" duration="4137000" />
+      <workItem from="1638065685590" duration="1838000" />
     </task>
     <servers />
   </component>

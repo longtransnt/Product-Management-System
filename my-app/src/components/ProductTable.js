@@ -6,9 +6,8 @@ import BootstrapTable from 'react-bootstrap-table-next'
 import ProductService from './ProductService';
 import ToolkitProvider, { Search } from 'react-bootstrap-table2-toolkit';
 import 'react-bootstrap-table2-paginator/dist/react-bootstrap-table2-paginator.min.css'
+import * as myConst from './Constants'
 
-const category = ['Food', 'Grocery', 'Household', 'Electronics', 'Mobile Phones', 'Male Ups',
-                 'Female Fashion', 'Male Fashion', 'Backpack and Suitcase', 'Accessories', 'Book', 'Computers'];
 const ProductTable = () => {
     const { SearchBar } = Search;
     const [itemList, setItemList] = useState([]);
@@ -16,7 +15,7 @@ const ProductTable = () => {
     const columns = [
         {dataField: 'id', text: "ID", sort: true, searchable: false},
         {dataField: 'name', text: "Name", sort: true },
-        {dataField: 'catID', text: "Category", searchable: false, formatter: (cell, row) => category[cell]},
+        {dataField: 'catID', text: "Category", searchable: false, formatter: (cell, row) => myConst.CATEGORIES_LIST[cell]},
     ]
 
     const pagination = paginationFactory({
@@ -33,7 +32,8 @@ const ProductTable = () => {
 
     useEffect(() => {
         const getProducts = async () => {
-            const res = await ProductService.getAll();
+            console.log(myConst.CATEGORIES_LIST);
+            const res = await ProductService.getAllProducts();
             setItemList(res.data);
         }
         if (fetch){
@@ -45,10 +45,10 @@ const ProductTable = () => {
     return (
         <ToolkitProvider
             keyField="id"
+            pagination={pagination}
+            srText= "Enter name of Items you want to search"
             data={itemList}
             columns={columns}
-            pagination={pagination}
-            srText= "Search on Name, "
             search={ {
                 searchFormatted: true
             } }

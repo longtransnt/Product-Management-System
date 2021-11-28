@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import Select from "react-select";
 import ProductService from "./ProductService";
+import * as myConst from './Constants'
 
 const UpdateStudent = () => {
     const [formInput, setFormInput] = useState({
@@ -10,15 +11,10 @@ const UpdateStudent = () => {
 
     const [catID, setCatID] = useState("0")
 
-    // Our sample dropdown options
-    const options = [{ value: 1, label: 'Food' }, { value: 2, label: 'Grocery' },{ value: 3, label: 'Household' },
-    { value: 4, label: 'Electronics' }, { value: 5, label: 'Mobile Phones' }, { value: 6, label: 'Make Ups' }, 
-    { value: 7, label: 'Female Fashion' }, { value: 8, label: 'Male Fashion' }, { value: 9, label: 'Backpack and Suitcase' }, { value: 10, label: 'Accessories' }, { value: 11, label: 'Book' }, { value: 12, label: 'Computers' }]
-
     const handleUpdate = async (event) => {
         try {
             // make axios post request
-            const res = await ProductService.update(JSON.stringify({ id: formInput["id"],
+            const res = await ProductService.updateProduct(JSON.stringify({ id: formInput["id"],
                 name: formInput["name"],
                 catID: catID.value
             }));
@@ -60,7 +56,7 @@ const UpdateStudent = () => {
             <Select
                 value={catID}
                 onChange={setCatID}
-                options={options}
+                options={myConst.CATEGORIES}
             />
             <br/>
             <input type="submit" value="Update"/>

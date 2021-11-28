@@ -1,17 +1,15 @@
 import React, {useState} from 'react';
 import Select from 'react-select';
 import ProductService from './ProductService';
+import * as myConst from './Constants'
 
 const AddProduct = () => {
     const [formInput, setFormInput] = useState({
         name: ''
     })
-
     const [catID, setCatID] = useState("1");
     const [errors,setErrors] = useState("")
-    const options = [{ value: 1, label: 'Food' }, { value: 2, label: 'Grocery' },{ value: 3, label: 'Household' },
-    { value: 4, label: 'Electronics' }, { value: 5, label: 'Mobile Phones' }, { value: 6, label: 'Make Ups' }, { value: 7, label: 'Female Fashion' }, { value: 8, label: 'Male Fashion' }, { value: 9, label: 'Backpack and Suitcase' }, { value: 10, label: 'Accessories' }, { value: 11, label: 'Book' }, { value: 12, label: 'Computers' }]
-
+    
     const handleValidation = () => {
         let errors = {};
         let formValid = true;
@@ -27,7 +25,7 @@ const AddProduct = () => {
 
     const handleAdd = async () => {
         try {
-            const res = await ProductService.create(JSON.stringify({
+            const res = await ProductService.createProduct(JSON.stringify({
                 name: formInput["name"],
                 catID: catID.value}));
         } catch (error) {
@@ -62,7 +60,7 @@ const AddProduct = () => {
             <Select
                 value={catID}
                 onChange={changeCat}
-                options={options}
+                options={myConst.CATEGORIES}
             />
             <br/>
             <input type="submit" value="Add"/>

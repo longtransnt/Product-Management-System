@@ -1,0 +1,4 @@
+export const CATEGORIES = [{ value: 1, label: 'Food' }, { value: 2, label: 'Grocery' },{ value: 3, label: 'Household' },
+    { value: 4, label: 'Electronics' }, { value: 5, label: 'Mobile Phones' }, { value: 6, label: 'Make Ups' }, { value: 7, label: 'Female Fashion' }, { value: 8, label: 'Male Fashion' }, { value: 9, label: 'Backpack and Suitcase' }, { value: 10, label: 'Accessories' }, { value: 11, label: 'Book' }, { value: 12, label: 'Computers' }]
+export const CATEGORIES_LIST = ['','Food', 'Grocery', 'Household', 'Electronics', 'Mobile Phones', 'Male Ups',
+'Female Fashion', 'Male Fashion', 'Backpack and Suitcase', 'Accessories', 'Book', 'Computers'];
