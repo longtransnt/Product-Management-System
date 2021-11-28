@@ -9,6 +9,7 @@ import 'react-bootstrap-table2-paginator/dist/react-bootstrap-table2-paginator.m
 import * as myConst from './Constants'
 
 const ProductTable = () => {
+    // Set State
     const { SearchBar, ClearSearchButton } = Search;
     const [itemList, setItemList] = useState([]);
     const [fetch,setFetch] = useState(true);
@@ -19,6 +20,7 @@ const ProductTable = () => {
         {dataField: 'catID', text: "Category", searchable: true, formatter: (cell, row) => myConst.CATEGORIES_LIST[cell]},
     ]
 
+    // Pagnination Setup
     const pagination = paginationFactory({
         page: 1,
         sizePerPage: 10,
@@ -31,6 +33,7 @@ const ProductTable = () => {
         hideSizePerPage: true
     });
 
+    // UseEffect Get All Products In Database
     useEffect(() => {
         const getProducts = async () => {
             console.log(myConst.CATEGORIES_LIST);
@@ -44,11 +47,12 @@ const ProductTable = () => {
     }, []);
 
     return (
+        // Search Bar and Table Setup
         <ToolkitProvider
             keyField="id"
             data={itemList}
             columns={columns}
-            srText= "Enter name of Items you want to search"
+            srText= "Search Item"
             search={{
                 searchFormatted: true
             }}
