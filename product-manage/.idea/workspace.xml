@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="05d7d98e-4dce-4ddf-9fd8-e6397a2a1bce" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../my-app/src/components/AddProduct.js" beforeDir="false" afterPath="$PROJECT_DIR$/../my-app/src/components/AddProduct.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../my-app/src/components/ProductTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/../my-app/src/components/ProductTable.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../my-app/src/components/UpdateProduct.js" beforeDir="false" afterPath="$PROJECT_DIR$/../my-app/src/components/UpdateProduct.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
