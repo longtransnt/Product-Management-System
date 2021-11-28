@@ -5,18 +5,13 @@ import * as myConst from './Constants';
 import Button from 'react-bootstrap/Button';
 
 const UpdateStudent = () => {
-    const [formInput, setFormInput] = useState({
-        id: '',
-        name: '',
-        description: ''
-    })
-
+    const [formInput, setFormInput] = useState({id: '', name: '', description: ''})
     const [id, setID] = useState("")
     const [catID, setCatID] = useState("0")
 
+    // Handle update request when update submit runs
     const handleUpdate = async (event) => {
         try {
-            // make axios post request
             const res = await ProductService.updateProduct(JSON.stringify({ 
                 id: formInput["id"],
                 name: formInput["name"],
@@ -27,6 +22,8 @@ const UpdateStudent = () => {
             console.log(error)
         }
     }
+
+    // Handle Form Input Change
     const handleQuery = (event) => {
         setFormInput({
             ...formInput,
@@ -34,6 +31,7 @@ const UpdateStudent = () => {
         });
     }
 
+    // Handle remove product submit
     const handleSubmit = async (event) => {
         try {
             const res = await ProductService.removeProduct(id)
@@ -42,6 +40,7 @@ const UpdateStudent = () => {
         }
     }
 
+    // Handle input delete id 
     const handleDelete = (event) => {
         setID(event.target.value)
     }
