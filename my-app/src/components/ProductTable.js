@@ -49,9 +49,9 @@ const ProductTable = () => {
             data={itemList}
             columns={columns}
             srText= "Enter name of Items you want to search"
-            search={ {
+            search={{
                 searchFormatted: true
-            } }
+            }}
         >
             {
                 props => (

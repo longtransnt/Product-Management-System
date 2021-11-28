@@ -107,12 +107,14 @@ const UpdateStudent = () => {
                             <div class="col-sm-12 col-form-label col-form-label-lg">
                                 <Button class="btn"
                                     type="submit" value="Update"
+                                    variant="success"
                                 >
                                     Update
                                 </Button>
                             </div>
                             <div class="col-sm-12 col-form-label col-form-label-lg">
                             <Button class="btn"
+                                variant="danger"
                                 onClick={() => document.getElementById("delete-form").style.display="block"}
                             >
                                 Delete Item
@@ -143,6 +145,7 @@ const UpdateStudent = () => {
                             <div class="col-sm-12 col-form-label col-form-label-lg">
                                 <Button class="btn"
                                     type="submit" value="Delete"
+                                    variant="danger"
                                 >
                                     Confirm Delete
                                 </Button>

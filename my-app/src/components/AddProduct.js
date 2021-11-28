@@ -99,7 +99,7 @@ const AddProduct = () => {
                         </div>
                         <br/>
                         <div class="col-sm-12 col-form-label col-form-label-lg">
-                            <Button class="btn" type="submit" value="Add">
+                            <Button class="btn" type="submit" value="Add" variant="success">
                                 Add Product
                             </Button>
                         </div>
