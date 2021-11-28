@@ -45,26 +45,31 @@ const AddProduct = () => {
     }
 
     return (
-        <form onSubmit={handleAdd}>
-            <h1>Add new Item</h1>
-            <br/>
-            <input
-                value={formInput.name}
-                onChange={handleUpdate}
-                placeholder="Name"
-                type="text"
-                name="name"
-                required
-            />
-            <br/>
-            <Select
-                value={catID}
-                onChange={changeCat}
-                options={myConst.CATEGORIES}
-            />
-            <br/>
-            <input type="submit" value="Add"/>
-        </form>
+        <div class="container d-flex justify-content-center align-items-left" id="container">
+            <div class="bg-white rounded shadow-5-strong p-5">
+                <form onSubmit={handleAdd}>
+                    <h2>Add A New Item</h2>
+                    <br/>
+                    <input
+                        value={formInput.name}
+                        onChange={handleUpdate}
+                        placeholder="Name"
+                        type="text"
+                        name="name"
+                        required
+                    />
+                    <br/>
+                    <br/>
+                    <Select
+                        value={catID}
+                        onChange={changeCat}
+                        options={myConst.CATEGORIES}
+                    />
+                    <br/>
+                    <input type="submit" value="Add"/>
+                </form>
+            </div>
+        </div>
     );
 }
 

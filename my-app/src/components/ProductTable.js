@@ -9,7 +9,7 @@ import 'react-bootstrap-table2-paginator/dist/react-bootstrap-table2-paginator.m
 import * as myConst from './Constants'
 
 const ProductTable = () => {
-    const { SearchBar } = Search;
+    const { SearchBar, ClearSearchButton } = Search;
     const [itemList, setItemList] = useState([]);
     const [fetch,setFetch] = useState(true);
     const columns = [
@@ -21,10 +21,10 @@ const ProductTable = () => {
     const pagination = paginationFactory({
         page: 1,
         sizePerPage: 10,
-        lastPageText: '>>',
-        firstPageText: '<<',
-        nextPageText: '=>',
-        prePageText: '<=',
+        lastPageText: 'Last',
+        firstPageText: 'First',
+        nextPageText: 'Next',
+        prePageText: 'Previous',
         showTotal: true,
         alwaysShowAllBtns: true,
         hideSizePerPage: true
@@ -45,20 +45,34 @@ const ProductTable = () => {
     return (
         <ToolkitProvider
             keyField="id"
-            pagination={pagination}
-            srText= "Enter name of Items you want to search"
             data={itemList}
             columns={columns}
+
+            srText= "Enter name of Items you want to search"
             search={ {
                 searchFormatted: true
             } }
-
         >
             {
                 props => (
-                    <div>
-                        <SearchBar { ...props.searchProps } />
-                        <BootstrapTable {...props.baseProps}/>
+                    <div 
+                        class="container d-flex justify-content-center align-items-center"
+                        id="container"
+                    >
+                        <div class="col-l-4 col-md-12">
+                            <div class="bg-white rounded shadow-5-strong p-5">
+                                <div class="searchbar">
+                                    <SearchBar { ...props.searchProps } /> 
+                                    <ClearSearchButton { ...props.searchProps } />
+                                </div>
+                                <div>
+                                    <BootstrapTable 
+                                        pagination={pagination}
+                                        {...props.baseProps}
+                                    />
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 )
             }

@@ -1,6 +1,5 @@
 import './App.css';
 import "bootstrap/dist/css/bootstrap.min.css";
-import Sites from "./components/Sites";
 import AddProduct from "./components/AddProduct";
 import ProductTable from './components/ProductTable';
 import DeleteProduct from './components/DeleteProduct';
@@ -26,22 +25,18 @@ function App() {
             height="30"
             className="d-inline-block align-top"
           />{' '}
-        React Bootstrap
+        My Online Store App
         </Navbar.Brand>
         <Nav className="me-auto">
           <Nav.Link onClick={()=>setPage('Product Table')}>Product Table</Nav.Link>
           <Nav.Link onClick={()=>setPage('Add Product')}>Add Product</Nav.Link>
           <Nav.Link onClick={()=>setPage('Update Product')}>Update Product</Nav.Link>
-          <Nav.Link onClick={()=>setPage('Delete Product')}>Delete Product</Nav.Link>
         </Nav>
       </Container>
     </Navbar>
-
       {page==='Product Table'? <ProductTable/>: ''} 
       {page==='Add Product'? <AddProduct/>: ''}
       {page==='Update Product'? <UpdateProduct/>: ''}
-      {page==='Delete Product'? <DeleteProduct/>: ''}
-
     </div>
   );
 }
