@@ -15,7 +15,8 @@ const ProductTable = () => {
     const columns = [
         {dataField: 'id', text: "ID", sort: true, searchable: false},
         {dataField: 'name', text: "Name", sort: true },
-        {dataField: 'catID', text: "Category", searchable: false, formatter: (cell, row) => myConst.CATEGORIES_LIST[cell]},
+        {dataField: 'description', text: "Description", sort: true },
+        {dataField: 'catID', text: "Category", searchable: true, formatter: (cell, row) => myConst.CATEGORIES_LIST[cell]},
     ]
 
     const pagination = paginationFactory({

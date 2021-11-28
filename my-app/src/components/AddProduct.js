@@ -7,7 +7,8 @@ import Button from 'react-bootstrap/Button';
 
 const AddProduct = () => {
     const [formInput, setFormInput] = useState({
-        name: ''
+        name: '',
+        description: ''
     })
     const [catID, setCatID] = useState("1");
     const [errors,setErrors] = useState("")
@@ -18,7 +19,12 @@ const AddProduct = () => {
 
         if(!formInput["name"]) {
             formValid = false;
-            errors["name"] = "Cannot be empty";
+            errors["name"] = "Name must be entered";
+        }
+
+        if(!formInput["description"]) {
+            formValid = false;
+            errors["description"] = "Description must be entered";
         }
 
         setErrors({ errors: errors });
@@ -29,6 +35,7 @@ const AddProduct = () => {
         try {
             const res = await ProductService.createProduct(JSON.stringify({
                 name: formInput["name"],
+                description: formInput["description"],
                 catID: catID.value}));
         } catch (error) {
             console.log(error)
@@ -58,6 +65,16 @@ const AddProduct = () => {
                         placeholder="Name"
                         type="text"
                         name="name"
+                        required
+                    />
+                    <br/>
+                    <br/>
+                    <input
+                        value={formInput.description}
+                        onChange={handleUpdate}
+                        placeholder="Product Description"
+                        type="text"
+                        name="description"
                         required
                     />
                     <br/>

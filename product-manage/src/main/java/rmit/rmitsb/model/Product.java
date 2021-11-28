@@ -12,13 +12,15 @@ public class Product {
     private long id;
     private String catID;
     private String name;
+    private String description;
 
     public Product() {
     }
 
-    public Product (String name, String catID) {
+    public Product (String name, String catID, String description) {
         this.name = name;
         this.catID = catID;
+        this.description = description;
     }
 
     public long getId() {
@@ -43,5 +45,13 @@ public class Product {
 
     public void setCatID(String catID) {
         this.catID = catID;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

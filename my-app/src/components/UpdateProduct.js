@@ -8,6 +8,7 @@ const UpdateStudent = () => {
     const [formInput, setFormInput] = useState({
         id: '',
         name: '',
+        description: ''
     })
 
     const [id, setID] = useState("")
@@ -16,8 +17,10 @@ const UpdateStudent = () => {
     const handleUpdate = async (event) => {
         try {
             // make axios post request
-            const res = await ProductService.updateProduct(JSON.stringify({ id: formInput["id"],
+            const res = await ProductService.updateProduct(JSON.stringify({ 
+                id: formInput["id"],
                 name: formInput["name"],
+                description: formInput["description"],
                 catID: catID.value
             }));
         } catch (error) {
@@ -66,6 +69,15 @@ const UpdateStudent = () => {
                             placeholder="Name"
                             type="text"
                             name="name"
+                        />
+                        <br/>
+                        <br/>
+                        <input
+                            value={formInput.description}
+                            onChange={handleQuery}
+                            placeholder="Description"
+                            type="text"
+                            name="description"
                         />
                         <br/>
                         <br/>

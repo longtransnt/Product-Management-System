@@ -55,6 +55,10 @@ public class ProductServiceImpl implements ProductService {
         if (isUpdatable(product.getCatID())) {
             queryProduct.setCatID(product.getCatID());
         }
+
+        if (isUpdatable(product.getDescription())) {
+            queryProduct.setDescription(product.getDescription());
+        }
     }
 
     private boolean isUpdatable(String para) {
