@@ -13,7 +13,6 @@ function App() {
   const [page, setPage] = useState('Product Table')
   return (
     <div className="App">
-    {/* Navbar */}
     <Navbar bg="dark" variant="dark">
       <Container>
         <Navbar.Brand href="#home">
@@ -33,7 +32,6 @@ function App() {
         </Nav>
       </Container>
     </Navbar>
-    {/* Page body to set page on click */}
       {page==='Product Table'? <ProductTable/>: ''} 
       {page==='Add Product'? <AddProduct/>: ''}
       {page==='Update Product'? <UpdateProduct/>: ''}

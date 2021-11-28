@@ -6,14 +6,31 @@ import Button from 'react-bootstrap/Button';
 
 
 const AddProduct = () => {
-    // Set State
     const [formInput, setFormInput] = useState({
         name: '',
         description: ''
     })
     const [catID, setCatID] = useState("1");
-   
-    // Handle Add Product When Submit is Called
+    const [errors,setErrors] = useState("")
+    
+    const handleValidation = () => {
+        let errors = {};
+        let formValid = true;
+
+        if(!formInput["name"]) {
+            formValid = false;
+            errors["name"] = "Name must be entered";
+        }
+
+        if(!formInput["description"]) {
+            formValid = false;
+            errors["description"] = "Description must be entered";
+        }
+
+        setErrors({ errors: errors });
+        return formValid;
+    }
+
     const handleAdd = async () => {
         try {
             const res = await ProductService.createProduct(JSON.stringify({
@@ -24,8 +41,6 @@ const AddProduct = () => {
             console.log(error)
         }
     }
-
-    // Handle Update in Form Input
     const handleUpdate = (event) => {
         setFormInput({
             ...formInput,
@@ -33,14 +48,12 @@ const AddProduct = () => {
         });
     }
 
-    // Handle Category Change
     const changeCat = (catID) => {
         setCatID(catID)
         console.log(catID)
     }
 
     return (
-        // Input Form
         <div class="container d-flex justify-content-center align-items-center" id="container">
             <div class="bg-white rounded shadow-5-strong p-5">
                 <h2>Add A New Item</h2>
