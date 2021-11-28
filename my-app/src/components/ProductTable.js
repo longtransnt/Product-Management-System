@@ -48,7 +48,6 @@ const ProductTable = () => {
             keyField="id"
             data={itemList}
             columns={columns}
-
             srText= "Enter name of Items you want to search"
             search={ {
                 searchFormatted: true
@@ -62,6 +61,7 @@ const ProductTable = () => {
                     >
                         <div class="col-l-4 col-md-12">
                             <div class="bg-white rounded shadow-5-strong p-5">
+                                <h2>List Of All Items Available</h2>
                                 <div class="searchbar">
                                     <SearchBar { ...props.searchProps } /> 
                                     <ClearSearchButton { ...props.searchProps } />

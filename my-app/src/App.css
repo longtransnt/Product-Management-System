@@ -14,6 +14,11 @@ body, html {
   pointer-events: none;
 }
 
+h2 {
+  color: navy;
+  font-style: italic;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -55,4 +60,15 @@ body, html {
 
 .btn {
   min-width: 15em;
+  max-width: 2em;
+  margin: 2px;
+}
+
+.form-input {
+  margin: 2px;
+}
+
+.search_bar {
+  align-self:center;
+  font-style: oblique;
 }

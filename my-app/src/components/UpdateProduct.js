@@ -49,76 +49,105 @@ const UpdateStudent = () => {
     return (
         <div className="container d-flex justify-content-center align-items-left" id="container">
             <div className="bg-white rounded shadow-5-strong p-5">
-                    <div>
-                    <form onSubmit={handleUpdate}>
-                        <h2>Update Product</h2>
-                        <br/>
-                        <input
-                            value={formInput.id}
-                            onChange={handleQuery}
-                            placeholder="ID"
-                            type="text"
-                            name="id"
-                            required
-                        />
-                        <br/>
-                        <br/>
-                        <input
-                            value={formInput.name}
-                            onChange={handleQuery}
-                            placeholder="Name"
-                            type="text"
-                            name="name"
-                        />
-                        <br/>
-                        <br/>
-                        <input
-                            value={formInput.description}
-                            onChange={handleQuery}
-                            placeholder="Description"
-                            type="text"
-                            name="description"
-                        />
-                        <br/>
-                        <br/>
-                        <Select
-                            value={catID}
-                            onChange={setCatID}
-                            options={myConst.CATEGORIES}
-                        />
+                    <h2>Update Product</h2>
                     <br/>
+                   
+                    <form onSubmit={handleUpdate}>
+                        <div className="form-group row">
+                            <label for="inputID" class="col-sm-6 col-form-label col-form-label">Product ID:</label>
+                            <div class="col-sm-2">
+                                <input
+                                    className="form-input"
+                                    value={formInput.id}
+                                    onChange={handleQuery}
+                                    placeholder="ID"
+                                    type="text"
+                                    name="id"
+                                    required
+                                    id="inputID"
+                                />
+                            </div>
+                            <br/>
+                            <label for="inputName" class="col-sm-6 col-form-label col-form-label">Product Name:</label>
+                            <div class="col-sm-2">
+                                <input
+                                    className="form-input"
+                                    value={formInput.name}
+                                    onChange={handleQuery}
+                                    placeholder="Name"
+                                    type="text"
+                                    name="name"
+                                    id="inputName"
+                                />
+                            </div>
+                            <br/>
+                            <label for="inputDescription" class="col-sm-6 col-form-label col-form-label">Product Description:</label>
+                            <div class="col-sm-2">
+                                <input
+                                    className="form-input"
+                                    value={formInput.description}
+                                    onChange={handleQuery}
+                                    placeholder="Description"
+                                    type="text"
+                                    name="description"
+                                    id="inputDescription"
+                                />
+                            </div>
+                            <br/>
+                            <label for="inputCategory" class="col-sm-6 col-form-label col-form-label">Product Category:</label>
+                            <div class="col-sm-3">
+                                <Select
+                                    className="form-input"
+                                    value={catID}
+                                    onChange={setCatID}
+                                    options={myConst.CATEGORIES}
+                                    id="inputCategory"
+                                />
+                            </div>
+                            <div class="col-sm-12 col-form-label col-form-label-lg">
+                                <Button class="btn"
+                                    type="submit" value="Update"
+                                >
+                                    Update
+                                </Button>
+                            </div>
+                            <div class="col-sm-12 col-form-label col-form-label-lg">
                             <Button class="btn"
-                                type="submit" value="Update"
+                                onClick={() => document.getElementById("delete-form").style.display="block"}
                             >
-                                Update
+                                Delete Item
                             </Button>
+                            </div>
+                            <br/>
+                        </div>
                     </form>
-                </div>
-                <br/>
-                <Button class="btn"
-                    onClick={() => document.getElementById("delete-form").style.display="block"}
-                >
-                    Delete Item
-                </Button>
+                    
                 <div id="delete-form">
+                    <h2>Remove Product</h2>
                     <br/>
                     <form onSubmit={handleSubmit}>
-                        <h2>Remove Product</h2>
-                        <input
-                            value={id}
-                            onChange={handleDelete}
-                            placeholder="ID"
-                            type="text"
-                            name="id"
-                            required
-                        />
-                        <br/>
-                        <br/>
-                        <Button class="btn"
-                            type="submit" value="Delete"
-                        >
-                            Delete
-                        </Button>
+                        <div className="form-group row">
+                            <label for="inputID" class="col-sm-6 col-form-label col-form-label">Product ID:</label>
+                            <div class="col-sm-2">
+                                <input
+                                    className="form-input"
+                                    value={id}
+                                    onChange={handleDelete}
+                                    placeholder="ID"
+                                    type="text"
+                                    name="id"
+                                    required
+                                />
+                            </div>
+                            <br/>
+                            <div class="col-sm-12 col-form-label col-form-label-lg">
+                                <Button class="btn"
+                                    type="submit" value="Delete"
+                                >
+                                    Confirm Delete
+                                </Button>
+                            </div>
+                        </div>
                     </form>
                 </div>
             </div>
